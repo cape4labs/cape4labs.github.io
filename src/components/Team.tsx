@@ -13,7 +13,7 @@ export default function Team() {
     return (
         <>
             <div
-                className={`bg-[url(${ASSETS.bg})] bg-cover bg-center min-h-screen flex items-center justify-around `}
+                className={`bg-[url(${ASSETS.bg})] mt-12 bg-cover bg-center min-h-screen flex items-center justify-around `}
             >
                 <div className="items-center flex flex-col xl:justify-center xl:gap-12 xl:flex-row justify-around ">
                     <div className="flex flex-col gap-12 items-center justify-center md:flex-row">
