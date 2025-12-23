@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 const ASSETS = {
     bg: "/img/footer/bg.png",
     icon: "/img/footer/icon.svg",

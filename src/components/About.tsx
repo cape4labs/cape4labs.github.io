@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 const FOLDER_COUNT = 9
 const ASSETS = {
     center: "/img/info/escaper.png",
@@ -12,7 +10,7 @@ export default function About() {
             {/* Content Section */}
             <article className="max-w-prose text-center leading-relaxed text-midnight md:w-1/2 md:text-left md:text-xl">
                 <h2 className="mb-4 text-5xl font-bold font-secondary">About Our System</h2>
-                <p>
+                <p className="font-primary">
                     BASEMALL is a decentralized data marketplace that empowers individuals and
                     businesses to share, monetize, and access high-quality data with full
                     transparency and trust. In today’s world, data is one of the most valuable
@@ -42,14 +40,8 @@ function RotatingFolders() {
     return (
         <div className="relative flex h-full w-full justify-center border">
             {/* Center Image */}
-            <div className="relative z-10 w-56 h-56 overflow-hidden p-2">
-                <Image
-                    src={ASSETS.center}
-                    alt="Central icon"
-                    fill
-                    className="object-contain"
-                    priority
-                />
+            <div className="relative z-10 w-56 h-56 overflow-hidden p-2 items-center">
+                <img src={ASSETS.center} alt="Central icon" className="object-contain" />
             </div>
 
             {/* Rotating Ring */}
@@ -73,12 +65,7 @@ function Folder({ index }: { index: number }) {
             }}
         >
             <div className="relative h-20 w-20">
-                <Image
-                    src={ASSETS.folder}
-                    alt={`Folder ${index + 1}`}
-                    fill
-                    className="object-contain"
-                />
+                <img src={ASSETS.folder} alt={`Folder ${index + 1}`} className="object-contain" />
             </div>
         </div>
     )
