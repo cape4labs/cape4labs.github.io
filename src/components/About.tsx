@@ -55,7 +55,7 @@ function RotatingFolders() {
 }
 
 function Folder({ index }: { index: number }) {
-    const angle = (index / FOLDER_COUNT) * 360;
+    const angle = (index / FOLDER_COUNT) * 360
 
     return (
         <div
@@ -64,12 +64,14 @@ function Folder({ index }: { index: number }) {
                 transform: `rotate(${angle}deg) translateY(var(--radius)) rotate(${-angle}deg)`,
             }}
         >
-            <div className="relative animate-spin-slow-reverse
+            <div
+                className="relative animate-spin-slow-reverse
                             md:h-20 md:w-20 
                             lg:h-24 lg:w-24
-                            ">
-                <img 
-                    src={ASSETS.folder} 
+                            "
+            >
+                <img
+                    src={ASSETS.folder}
                     alt={`Folder ${index + 1}`}
                     className="w-full h-full object-contain"
                 />
