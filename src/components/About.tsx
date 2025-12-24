@@ -38,9 +38,9 @@ export default function About() {
 
 function RotatingFolders() {
     return (
-        <div className="relative flex h-full w-full justify-center border">
+        <div className="relative flex h-full w-full justify-center">
             {/* Center Image */}
-            <div className="relative z-10 w-56 h-56 overflow-hidden p-2 items-center">
+            <div className="relative z-9 w-56 h-56 overflow-hidden p-2 items-center">
                 <img src={ASSETS.center} alt="Central icon" className="object-contain" />
             </div>
 
@@ -55,17 +55,24 @@ function RotatingFolders() {
 }
 
 function Folder({ index }: { index: number }) {
-    const angle = (index / FOLDER_COUNT) * 360
+    const angle = (index / FOLDER_COUNT) * 360;
 
     return (
         <div
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 hover:scale-110"
             style={{
-                transform: `rotate(${angle}deg) translateY(var(--radius))`,
+                transform: `rotate(${angle}deg) translateY(var(--radius)) rotate(${-angle}deg)`,
             }}
         >
-            <div className="relative h-20 w-20">
-                <img src={ASSETS.folder} alt={`Folder ${index + 1}`} className="object-contain" />
+            <div className="relative animate-spin-slow-reverse
+                            md:h-20 md:w-20 
+                            lg:h-24 lg:w-24
+                            ">
+                <img 
+                    src={ASSETS.folder} 
+                    alt={`Folder ${index + 1}`}
+                    className="w-full h-full object-contain"
+                />
             </div>
         </div>
     )
