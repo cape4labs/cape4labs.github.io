@@ -43,4 +43,8 @@ body {
     .animate-spin-slow {
         animation: spin 20s linear infinite;
     }
+
+    .animate-spin-slow-reverse {
+        animation: spin 20s linear infinite reverse;
+    }
 }
