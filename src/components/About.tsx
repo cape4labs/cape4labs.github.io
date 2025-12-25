@@ -10,7 +10,7 @@ export default function About() {
             {/* Content Section */}
             <article className="max-w-prose leading-relaxed text-midnight text-left w-full">
                 <h2 className="mb-4 text-3xl font-bold font-secondary w-full">About Our System</h2>
-                <p className="font-primary w-full text-xl">
+                <p className="font-primary w-full text-lg sm:text-xl">
                     BASEMALL is a decentralized data marketplace that empowers individuals and
                     businesses to share, monetize, and access high-quality data with full
                     transparency and trust. In today’s world, data is one of the most valuable
@@ -29,7 +29,7 @@ export default function About() {
             </article>
 
             {/* Animation Section */}
-            <section className="relative flex aspect-square h-130 sm:h-200 lg:h-auto max-w-100 items-center justify-center">
+            <section className="relative flex aspect-square h-100 sm:h-150 lg:h-auto max-w-100 items-center justify-center">
                 <RotatingFolders />
             </section>
         </main>
