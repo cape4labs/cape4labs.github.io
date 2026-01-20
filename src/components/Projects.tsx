@@ -53,7 +53,6 @@ while it is used.`,
 }
 
 export default function Projects() {
-    // bg-[rgba(174, 174, 192, 0.85)
     return (
         <div className="flex flex-col justify-center items-center mt-10">
             <Project
@@ -120,7 +119,7 @@ type ProjectData = {
 
 function Project({ data, children }: { data: ProjectData; children: React.ReactNode }) {
     return (
-        <div className="aspect-2/1 w-full max-w-4xl border-2 relative bg-linear-to-b from-white to-gray-300/55 via-gray-100/85">
+        <div className="aspect-2/1 w-4xl border-2 relative bg-linear-to-b from-white to-gray-300/55 via-gray-100/85">
             {children}
             <div className="flex flex-row gap-1 absolute left-0 right-0 bottom-3 justify-center">
                 {data.gh ? <ProjectLink link={data.gh} imageSrc={ASSETS.shared.gh} /> : null}
