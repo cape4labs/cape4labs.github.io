@@ -21,6 +21,7 @@ export default function Header() {
 
     return (
         <>
+            {/*TODO: eliminate one of the two header components*/}
             <header className="hidden sm:flex flex-row bg-midnight w-full h-24 sticky top-0 z-10 justify-center font-primary">
                 <Logo />
                 <Section backgroundImageSource={ASSETS.bg1} text="About" href="#about" />
