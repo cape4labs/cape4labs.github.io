@@ -21,7 +21,7 @@ export default function Header() {
 
     return (
         <>
-            <header className="hidden sm:flex flex-row bg-midnight w-full h-28 sticky top-0 z-10 justify-center font-primary">
+            <header className="hidden sm:flex flex-row bg-midnight w-full h-24 sticky top-0 z-10 justify-center font-primary">
                 <Logo />
                 <Section backgroundImageSource={ASSETS.bg1} text="About" href="#about" />
                 <Flower imageSource={ASSETS.flower1} />
@@ -108,10 +108,7 @@ function LogoMobile() {
 
 function Flower({ imageSource: source }: { imageSource: string }) {
     return (
-        <div
-            className="items-center justify-center bg-white text-midnight h-1/4 
-                        sm:hidden lg:flex sm:h-full"
-        >
+        <div className="items-center justify-center bg-white text-midnight h-1/4 sm:hidden lg:flex sm:h-full">
             <Image
                 src={source}
                 alt="flower"
@@ -135,9 +132,7 @@ function Section({
     return (
         <a
             href={href}
-            className="relative  flex items-center justify-center overflow-hidden cursor-pointer 
-                       flex-1 transition-all duration-300 hover:brightness-110 bg-midnight h-26 sm:h-full
-                       "
+            className="relative flex items-center justify-center overflow-hidden cursor-pointer flex-1 transition-all duration-300 hover:brightness-110 bg-midnight h-26 sm:h-full"
         >
             <Image
                 src={backgroundImageSource}
