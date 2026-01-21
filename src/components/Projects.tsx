@@ -112,7 +112,7 @@ export default function Projects() {
 }
 
 type ProjectData = {
-    gh: string
+    gh?: string
     web?: string
     article?: string
 }

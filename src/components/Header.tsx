@@ -16,48 +16,20 @@ const ASSETS = {
 }
 
 export default function Header() {
+    // TODO: rewrite the component not to use state to enable server side rendering
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-    const handleScroll = (href: string) => {
-        const element = document.getElementById(href.replace("#", ""))
-        if (element) {
-            element.scrollIntoView({ behavior: "smooth", block: "start" })
-        }
-        setMobileMenuOpen(false)
-    }
 
     return (
         <>
             <header className="hidden sm:flex flex-row bg-midnight w-full h-28 sticky top-0 z-10 justify-center font-primary">
                 <Logo />
-                <Section
-                    backgroundImageSource={ASSETS.bg1}
-                    text="About"
-                    href="#about"
-                    onClick={handleScroll}
-                />
+                <Section backgroundImageSource={ASSETS.bg1} text="About" href="#about" />
                 <Flower imageSource={ASSETS.flower1} />
-
-                <Section
-                    backgroundImageSource={ASSETS.bg2}
-                    text="Team"
-                    href="#team"
-                    onClick={handleScroll}
-                />
+                <Section backgroundImageSource={ASSETS.bg2} text="Team" href="#team" />
                 <Flower imageSource={ASSETS.flower2} />
-                <Section
-                    backgroundImageSource={ASSETS.bg3}
-                    text="Projects"
-                    href="#projects"
-                    onClick={handleScroll}
-                />
+                <Section backgroundImageSource={ASSETS.bg3} text="Projects" href="#projects" />
                 <Flower imageSource={ASSETS.flower3} />
-                <Section
-                    backgroundImageSource={ASSETS.bg4}
-                    text="Contact"
-                    href="#contact"
-                    onClick={handleScroll}
-                />
+                <Section backgroundImageSource={ASSETS.bg4} text="Contact" href="#contact" />
                 <Flower imageSource={ASSETS.flower4} />
             </header>
 
@@ -79,18 +51,12 @@ export default function Header() {
                                 backgroundImageSource={ASSETS.bg1}
                                 text="About"
                                 href="#about"
-                                onClick={handleScroll}
                             />
                             <Flower imageSource={ASSETS.flower1} />
                         </div>
 
                         <div className="flex flex-row items-center">
-                            <Section
-                                backgroundImageSource={ASSETS.bg2}
-                                text="Team"
-                                href="#team"
-                                onClick={handleScroll}
-                            />
+                            <Section backgroundImageSource={ASSETS.bg2} text="Team" href="#team" />
                             <Flower imageSource={ASSETS.flower2} />
                         </div>
                         <div className="flex flex-row items-center overflow-x-hidden">
@@ -98,7 +64,6 @@ export default function Header() {
                                 backgroundImageSource={ASSETS.bg3}
                                 text="Projects"
                                 href="#projects"
-                                onClick={handleScroll}
                             />
                             <Flower imageSource={ASSETS.flower3} />
                         </div>
@@ -107,7 +72,6 @@ export default function Header() {
                                 backgroundImageSource={ASSETS.bg4}
                                 text="Contact"
                                 href="#contact"
-                                onClick={handleScroll}
                             />
                             <Flower imageSource={ASSETS.flower4} />
                         </div>
@@ -162,20 +126,15 @@ function Flower({ imageSource: source }: { imageSource: string }) {
 function Section({
     backgroundImageSource,
     text,
-    onClick,
     href,
 }: {
     backgroundImageSource: string
     text: string
-    onClick: (href: string) => void
     href: string
 }) {
     return (
-        <button
-            onClick={(e) => {
-                e.preventDefault()
-                onClick(href)
-            }}
+        <a
+            href={href}
             className="relative  flex items-center justify-center overflow-hidden cursor-pointer 
                        flex-1 transition-all duration-300 hover:brightness-110 bg-midnight h-26 sm:h-full
                        "
@@ -190,6 +149,6 @@ function Section({
             <div className="relative z-10 px-4">
                 <h2 className="text-white text-xl lg:text-2xl font-primary">{text}</h2>
             </div>
-        </button>
+        </a>
     )
 }

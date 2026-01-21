@@ -12,10 +12,12 @@ export default function Home() {
             <section id="about">
                 <About />
             </section>
-            <section id="artwork" className="w-full mt-10">
+            <section id="artwork">
                 <Artwork />
             </section>
-            <Projects />
+            <section id="projects">
+                <Projects />
+            </section>
             <section id="team">
                 <Team />
             </section>
