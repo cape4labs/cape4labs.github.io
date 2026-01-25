@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
-
     scroll-behavior: smooth;
 }
 
 body {
-    color: var(--foreground);
+    background-color: var(--color-midnight-dark);
+    color: #171717;
 }
 
 @theme inline {
-    --color-midnight: #202052;
+    --color-midnight-dark: #202052;
+    --color-midnight-soft: #30305e;
+    --color-midnight-light: #353591;
     --font-primary: var(--font-primary);
     --font-secondary: var(--font-secondary);
 }

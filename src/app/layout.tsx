@@ -1,8 +1,8 @@
 import type { Metadata } from "next"
-import { DotGothic16, Sorts_Mill_Goudy } from "next/font/google"
+import { Bungee_Shade, Sorts_Mill_Goudy } from "next/font/google"
 import "./globals.css"
 
-const dotGothic16 = DotGothic16({
+const bungeeShade = Bungee_Shade({
     weight: "400",
     variable: "--font-primary",
 })
@@ -23,7 +23,7 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en" className={`${dotGothic16.variable} ${sortsMillGoudy.variable}`}>
+        <html lang="en" className={`${bungeeShade.variable} ${sortsMillGoudy.variable}`}>
             <body>{children}</body>
         </html>
     )

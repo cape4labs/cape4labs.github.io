@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 const ASSETS = {
     bg: "/img/team/bg.png",
     temp: "/img/team/temp.jpg",
@@ -11,68 +9,66 @@ const ASSETS = {
 
 export default function Team() {
     return (
-        <>
+        <div className="text-center p-5">
+            <h2 className="font-primary text-6xl text-midnight-light">OUR TEAM</h2>
             <div
-                className={`bg-[url(${ASSETS.bg})] mt-12 bg-cover bg-center min-h-screen flex items-center justify-around `}
+                className={`bg-[url(${ASSETS.bg})] mt-12 bg-cover flex items-center justify-around `}
             >
-                <div className="items-center flex flex-col xl:justify-center xl:gap-12 xl:flex-row justify-around ">
-                    <div className="flex flex-col gap-12 items-center justify-center md:flex-row">
+                <div className="items-center flex flex-col xl:justify-center xl:gap-12 justify-around font-secondary">
+                    <div className="flex gap-6 items-center justify-center">
                         <Profile
                             imageSource={ASSETS.temp}
-                            name="isgin01"
-                            quote="no it's not right!"
+                            name="sprutocean"
+                            quote="i'm fine thanks"
+                            translateY="-translate-y-4"
                         />
                         <Profile
                             imageSource={ASSETS.temp}
                             name="qwaq"
                             quote="it's okay, don't worry"
+                            translateY="-translate-y-1"
                         />
-                    </div>
-                    <div className="flex flex-col gap-12 items-center justify-center md:flex-row mt-5">
                         <Profile
                             imageSource={ASSETS.temp}
-                            name="sprutocean"
-                            quote="i'm fine thanks"
+                            name="isgin01"
+                            quote="no it's not right!"
+                            translateY=""
                         />
+
                         <Profile
                             imageSource={ASSETS.temp}
                             name="omnopon"
                             quote="let's become hackers"
+                            translateY="-translate-y-4"
                         />
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
-function Profile(member: { imageSource: string; name: string; quote: string }) {
+function Profile(data: { imageSource: string; name: string; quote: string; translateY: string }) {
     return (
-        <div className="w-72 text-midnight font-primary relative">
-            <div className="relative w-full h-100 border-2 border-midnight bg-white z-10 overflow-hidden">
-                <Image
-                    src={member.imageSource}
-                    alt={`${member.name}'s image`}
-                    width={400}
-                    height={400}
-                    className="w-full h-full object-cover"
+        <div className={`w-72 relative ${data.translateY}`}>
+            <div className="relative aspect-4/6 border-2 border-midnight-dark z-10 overflow-hidden">
+                <img
+                    src={data.imageSource}
+                    alt={`${data.name}'s image`}
+                    className="object-cover h-full"
                 />
             </div>
 
+            {/*shadow*/}
             <div
-                className="absolute inset-0 translate-x-4 translate-y-4
-                    bg-midnight border-2 border-midnight z-0 h-100"
+                className="absolute inset-0 translate-3
+                    bg-midnight-dark border-2 border-midnight-dark z-0 aspect-4/6"
             ></div>
 
-            <div className="h-20 w-full flex border-2 border-midnight mt-8 bg-white">
-                <div className="flex-1">
-                    <div className="bg-midnight h-6 w-full" />
-                    <div className="h-full w-full p-2">{member.quote}</div>
-                </div>
-
-                <div className="min-w-5 h-full relative text-2xl border-l-2 border-midnight flex px-2">
-                    {member.name}
-                    <div className="w-5 h-5 bg-midnight absolute bottom-0 left-0" />
+            <div className="h-20 w-full flex border-2 border-midnight-dark mt-6 bg-white">
+                <div className="min-w-5 h-full relative border-midnight-dark flex px-2 text-3xl">
+                    {data.name}
+                    <div className="w-5 h-5 bg-midnight-dark absolute bottom-0 left-0" />
                 </div>
             </div>
         </div>
