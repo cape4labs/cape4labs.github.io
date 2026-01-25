@@ -8,20 +8,25 @@ const ASSETS = {
     flower2: "/img/nav/flower2.png",
     flower3: "/img/nav/flower3.png",
     flower4: "/img/nav/flower4.png",
+
+    separator: "/img/nav/separator.png",
 }
 
 export default function Header() {
     return (
-        <header className="flex w-4/6 m-auto h-24 mt-10 translate-x-10 font-primary">
-            <Section backgroundImageSource={ASSETS.bg1} text="INTRO" href="#intro" />
-            <Flower imageSource={ASSETS.flower1} />
-            <Section backgroundImageSource={ASSETS.bg2} text="PROJECTS" href="#projects" />
-            <Flower imageSource={ASSETS.flower2} />
-            <Section backgroundImageSource={ASSETS.bg3} text="TEAM" href="#team" />
-            <Flower imageSource={ASSETS.flower3} />
-            <Section backgroundImageSource={ASSETS.bg4} text="CONTACT US" href="#contact" />
-            <Flower imageSource={ASSETS.flower4} />
-        </header>
+        <div className="w-4/6 m-auto translate-x-10">
+            <header className="flex h-24 mt-10 font-primary">
+                <Section backgroundImageSource={ASSETS.bg1} text="INTRO" href="#intro" />
+                <Flower imageSource={ASSETS.flower1} />
+                <Section backgroundImageSource={ASSETS.bg2} text="PROJECTS" href="#projects" />
+                <Flower imageSource={ASSETS.flower2} />
+                <Section backgroundImageSource={ASSETS.bg3} text="TEAM" href="#team" />
+                <Flower imageSource={ASSETS.flower3} />
+                <Section backgroundImageSource={ASSETS.bg4} text="CONTACT US" href="#contact" />
+                <Flower imageSource={ASSETS.flower4} />
+            </header>
+            <img src={ASSETS.separator} className="w-full m-auto h-3 bg-midnight-dark" />
+        </div>
     )
 }
 
