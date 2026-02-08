@@ -1,59 +1,15 @@
-const ASSETS = {
-    bg1: "/img/nav/bg1.png",
-    bg2: "/img/nav/bg2.png",
-    bg3: "/img/nav/bg3.png",
-    bg4: "/img/nav/bg4.png",
-
-    flower1: "/img/nav/flower1.png",
-    flower2: "/img/nav/flower2.png",
-    flower3: "/img/nav/flower3.png",
-    flower4: "/img/nav/flower4.png",
-
-    separator: "/img/nav/separator.png",
-}
-
 export default function Header() {
     return (
-        <div className="w-4/6 m-auto translate-x-10">
-            <header className="flex h-24 mt-10 font-primary">
-                <Section backgroundImageSource={ASSETS.bg1} text="INTRO" href="#intro" />
-                <Flower imageSource={ASSETS.flower1} />
-                <Section backgroundImageSource={ASSETS.bg2} text="PROJECTS" href="#projects" />
-                <Flower imageSource={ASSETS.flower2} />
-                <Section backgroundImageSource={ASSETS.bg3} text="TEAM" href="#team" />
-                <Flower imageSource={ASSETS.flower3} />
-                <Section backgroundImageSource={ASSETS.bg4} text="CONTACT US" href="#contact" />
-                <Flower imageSource={ASSETS.flower4} />
-            </header>
-            <img src={ASSETS.separator} className="w-full m-auto h-3 bg-midnight-dark" />
-        </div>
-    )
-}
-
-function Flower({ imageSource }: { imageSource: string }) {
-    return <img src={imageSource} alt="flower" />
-}
-
-function Section({
-    backgroundImageSource,
-    text,
-    href,
-}: {
-    backgroundImageSource: string
-    text: string
-    href: string
-}) {
-    return (
-        <a
-            href={href}
-            className="relative flex items-center justify-center flex-1 transition-all duration-300 hover:brightness-110 max-h-full"
+        <header
+            className="bg-accent flex flex-col justify-center pt-10 sm:pt-5 items-center
+            text-left sm:border-8 border-black w-full border-b-8 sm:h-30 max-w-200"
         >
-            <img
-                src={backgroundImageSource}
-                alt="abstract background"
-                className="absolute h-full"
-            />
-            <h2 className="text-white font-bold text-xl lg:text-2xl">{text}</h2>
-        </a>
+            {/*Div block to align text to the left*/}
+            <div className="z-30">
+                <h2 className="z-20">cape4.tech</h2>
+                <h2 className="z-10 opacity-70 -translate-y-4">cape4.labs</h2>
+                <h2 className="z-0 opacity-40 -translate-y-8">cape4.team</h2>
+            </div>
+        </header>
     )
 }

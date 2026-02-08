@@ -10,6 +10,7 @@ body {
 }
 
 @theme inline {
+    --color-accent: #ffff24;
     --color-midnight-dark: #202052;
     --color-midnight-soft: #30305e;
     --color-midnight-light: #353591;

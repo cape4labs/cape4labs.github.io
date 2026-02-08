@@ -1,76 +1,60 @@
+import Image from "next/image"
+import Link from "next/link"
+import KeepOut from "./KeepOut"
+
 const ASSETS = {
-    bg: "/img/team/bg.png",
-    temp: "/img/team/temp.jpg",
-    isgin01: "",
-    qwaq: "",
-    sprutocean: "",
-    omnopon: "",
+    magician: "/img/magician.png",
+    dummy: "/img/dummy.png",
+    keepOut: "/img/keepOut.png",
 }
 
 export default function Team() {
     return (
-        <div className="text-center p-5">
-            <h2 className="font-primary text-6xl text-midnight-light">OUR TEAM</h2>
-            <div
-                className={`bg-[url(${ASSETS.bg})] mt-12 bg-cover flex items-center justify-around `}
-            >
-                <div className="items-center flex flex-col xl:justify-center xl:gap-12 justify-around font-secondary">
-                    <div className="flex gap-6 items-center justify-center">
-                        <Profile
-                            imageSource={ASSETS.temp}
-                            name="sprutocean"
-                            quote="i'm fine thanks"
-                            translateY="-translate-y-4"
-                        />
-                        <Profile
-                            imageSource={ASSETS.temp}
-                            name="qwaq"
-                            quote="it's okay, don't worry"
-                            translateY="-translate-y-1"
-                        />
-                        <Profile
-                            imageSource={ASSETS.temp}
-                            name="isgin01"
-                            quote="no it's not right!"
-                            translateY=""
-                        />
-
-                        <Profile
-                            imageSource={ASSETS.temp}
-                            name="omnopon"
-                            quote="let's become hackers"
-                            translateY="-translate-y-4"
-                        />
-                    </div>
-                </div>
+        <div
+            className="bg-white border-black flex flex-col items-center md:border-8
+            md:mt-2 max-w-200 relative"
+        >
+            <KeepOut style="md:hidden h-7" />
+            <h2 className="text-midnight-light z-30 mt-5">Our team</h2>
+            <div className="flex flex-col items-center px-4 md:grid md:grid-cols-2 gap-x-8 gap-y-4 md:gap-y-5 translate-y-5">
+                <Profile data={{ name: "q-waq", role: "front-end dev" }}></Profile>
+                <Profile data={{ name: "q-waq", role: "front-end dev" }}></Profile>
+                <Profile data={{ name: "q-waq", role: "front-end dev" }}></Profile>
+                <Profile data={{ name: "q-waq", role: "front-end dev" }}></Profile>
+            </div>
+            <KeepOut style="h-9 -rotate-[2.34deg] translate-y-5" />
+            <div className="hidden w-full md:block overflow-hidden">
+                <Image
+                    src={ASSETS.magician}
+                    width={1000}
+                    height={500}
+                    alt=""
+                    className="w-full h-full object-center object-contain"
+                />
             </div>
         </div>
     )
 }
 
-function Profile(data: { imageSource: string; name: string; quote: string; translateY: string }) {
+function Profile({ data }: { data: { name: string; role: string } }) {
     return (
-        <div className={`w-72 relative ${data.translateY}`}>
-            <div className="relative aspect-4/6 border-2 border-midnight-dark z-10 overflow-hidden">
-                <img
-                    src={data.imageSource}
-                    alt={`${data.name}'s image`}
-                    className="object-cover h-full"
-                />
+        <div className="border-black border-l border-t border-r-3 border-b-3 text-2xl font-mono font-extrabold grid grid-cols-2 p-2">
+            <div className="text-nowrap flex flex-col gap-2 z-30">
+                <h2 className="font-extrabold">{data.name}</h2>
+                <h2 className="text-stone-700">{data.role}</h2>
             </div>
-
-            {/*shadow*/}
-            <div
-                className="absolute inset-0 translate-3
-                    bg-midnight-dark border-2 border-midnight-dark z-0 aspect-4/6"
-            ></div>
-
-            <div className="h-20 w-full flex border-2 border-midnight-dark mt-6 bg-white">
-                <div className="min-w-5 h-full relative border-midnight-dark flex px-2 text-3xl">
-                    {data.name}
-                    <div className="w-5 h-5 bg-midnight-dark absolute bottom-0 left-0" />
-                </div>
+            <div className="flex flex-col justify-between items-end gap-1">
+                <SocialMedia />
+                <SocialMedia />
             </div>
         </div>
+    )
+}
+
+function SocialMedia() {
+    return (
+        <Link href="">
+            <Image src={ASSETS.dummy} alt="" width={35} height={35} className="invert"></Image>
+        </Link>
     )
 }

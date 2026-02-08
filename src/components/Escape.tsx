@@ -1,17 +1,42 @@
+import KeepOut from "./KeepOut"
+
 const ASSETS = {
-    escaper: "/img/about/escaper.png",
-    folder: "/img/about/folder.png",
+    escaper: "/img/escaper.png",
 }
 
 export default function Escape() {
     return (
-        <div className="flex items-center">
-            <img src={ASSETS.escaper} className="h-full" />
-            <div className="-translate-x-16">
-                <h2 className="text-6xl font-primary text-midnight-light">CAPE4.TECH</h2>
-                <h2 className="text-6xl font-primary text-midnight-light">CAPE4.LABS</h2>
-                <h2 className="text-6xl font-primary text-midnight-light">CAPE4.TEAM</h2>
+        <>
+            <div
+                className="max-h-screen bg-white pt-10 items-center text-midnight-light pb-15 border-black
+            md:border-8 md:mt-2 flex flex-col md:flex-row-reverse md:p-5 relative max-w-200"
+            >
+                {/*Background text*/}
+                <div
+                    className="absolute opacity-10 left-0 top-0 text-5xl text-justify
+                    text-nowrap max-w-full max-h-full overflow-hidden"
+                >
+                    {Array.from({ length: 12 }, (_, key) => (
+                        <p key={key}>
+                            Cape4labs is an independent web development studio with a tiny
+                        </p>
+                    ))}
+                </div>
+
+                <div className="text-nowrap z-30">
+                    <h2>The studio</h2>
+                    <h2>of web de-</h2>
+                    <h2>velopment</h2>
+                </div>
+
+                <br />
+
+                <div className="mt-10">
+                    <img src={ASSETS.escaper} className="scale-125" />
+                </div>
+
+                <KeepOut style="h-7 absolute top-45 md:top-auto md:bottom-15 -rotate-5" />
             </div>
-        </div>
+        </>
     )
 }
