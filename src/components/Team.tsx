@@ -6,6 +6,7 @@ const ASSETS = {
     magician: "/img/magician.png",
     dummy: "/img/dummy.png",
     keepOut: "/img/keepOut.png",
+    github: "/img/github.png",
 }
 
 export default function Team() {
@@ -17,10 +18,42 @@ export default function Team() {
             <KeepOut style="md:hidden h-7" />
             <h2 className="text-midnight-light z-30 mt-5">Our team</h2>
             <div className="flex flex-col items-center px-4 md:grid md:grid-cols-2 gap-x-8 gap-y-4 md:gap-y-5 translate-y-5">
-                <Profile data={{ name: "q-waq", role: "front-end dev" }}></Profile>
-                <Profile data={{ name: "q-waq", role: "front-end dev" }}></Profile>
-                <Profile data={{ name: "q-waq", role: "front-end dev" }}></Profile>
-                <Profile data={{ name: "q-waq", role: "front-end dev" }}></Profile>
+                <Profile
+                    data={{
+                        name: "qwaq",
+                        role: "developer",
+                        socialMediaEntries: [
+                            { link: "https://github.com/QwaQ-dev", image: ASSETS.github },
+                        ],
+                    }}
+                ></Profile>
+                <Profile
+                    data={{
+                        name: "no-hive",
+                        role: "tech. writer",
+                        socialMediaEntries: [
+                            { link: "https://github.com/no-hive", image: ASSETS.github },
+                        ],
+                    }}
+                ></Profile>
+                <Profile
+                    data={{
+                        name: "omnopon",
+                        role: "design",
+                        socialMediaEntries: [
+                            { link: "https://github.com/f2que", image: ASSETS.github },
+                        ],
+                    }}
+                ></Profile>
+                <Profile
+                    data={{
+                        name: "isgin01",
+                        role: "developer",
+                        socialMediaEntries: [
+                            { link: "https://github.com/isgin01", image: ASSETS.github },
+                        ],
+                    }}
+                ></Profile>
             </div>
             <KeepOut style="h-9 -rotate-[2.34deg] translate-y-5" />
             <div className="hidden w-full md:block overflow-hidden">
@@ -36,25 +69,30 @@ export default function Team() {
     )
 }
 
-function Profile({ data }: { data: { name: string; role: string } }) {
+function Profile({
+    data,
+}: {
+    data: { name: string; role: string; socialMediaEntries: { link: string; image: string }[] }
+}) {
     return (
         <div className="border-black border-l border-t border-r-3 border-b-3 text-2xl font-mono font-extrabold grid grid-cols-2 p-2">
             <div className="text-nowrap flex flex-col gap-2 z-30">
                 <h2 className="font-extrabold">{data.name}</h2>
                 <h2 className="text-stone-700">{data.role}</h2>
             </div>
-            <div className="flex flex-col justify-between items-end gap-1">
-                <SocialMedia />
-                <SocialMedia />
+            <div className="flex flex-col justify-center items-end gap-3">
+                {data.socialMediaEntries.map((socialMediaEntry) => (
+                    <SocialMediaLink data={socialMediaEntry} />
+                ))}
             </div>
         </div>
     )
 }
 
-function SocialMedia() {
+function SocialMediaLink({ data }: { data: { link: string; image: string } }) {
     return (
-        <Link href="">
-            <Image src={ASSETS.dummy} alt="" width={35} height={35} className="invert"></Image>
+        <Link href={data.link}>
+            <Image src={data.image} alt="" width={100} height={100} className="h-7 w-auto" />
         </Link>
     )
 }
