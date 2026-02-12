@@ -21,7 +21,7 @@ export default function Team() {
                 <Profile
                     data={{
                         name: "qwaq",
-                        role: "developer",
+                        role: "development",
                         socialMediaEntries: [
                             { link: "https://github.com/QwaQ-dev", image: ASSETS.github },
                         ],
@@ -30,7 +30,7 @@ export default function Team() {
                 <Profile
                     data={{
                         name: "no-hive",
-                        role: "tech. writer",
+                        role: "tech. writing",
                         socialMediaEntries: [
                             { link: "https://github.com/no-hive", image: ASSETS.github },
                         ],
@@ -48,7 +48,7 @@ export default function Team() {
                 <Profile
                     data={{
                         name: "isgin01",
-                        role: "developer",
+                        role: "development",
                         socialMediaEntries: [
                             { link: "https://github.com/isgin01", image: ASSETS.github },
                         ],
@@ -75,7 +75,7 @@ function Profile({
     data: { name: string; role: string; socialMediaEntries: { link: string; image: string }[] }
 }) {
     return (
-        <div className="border-black border-l border-t border-r-3 border-b-3 text-2xl font-mono font-extrabold grid grid-cols-2 p-2">
+        <div className="border-black border-l border-t border-r-3 border-b-3 text-2xl font-mono font-extrabold grid grid-cols-2 p-2 w-75 sm:w-90 md:w-auto">
             <div className="text-nowrap flex flex-col gap-2 z-30">
                 <h2 className="font-extrabold">{data.name}</h2>
                 <h2 className="text-stone-700">{data.role}</h2>
