@@ -7,6 +7,7 @@ const ASSETS = {
     dummy: "/img/dummy.png",
     keepOut: "/img/keepOut.png",
     github: "/img/github.png",
+    telegram: "/img/telegram.png",
 }
 
 export default function Team() {
@@ -24,6 +25,7 @@ export default function Team() {
                         role: "development",
                         socialMediaEntries: [
                             { link: "https://github.com/QwaQ-dev", image: ASSETS.github },
+                            { link: "https://t.me/qwaq_dev", image: ASSETS.telegram },
                         ],
                     }}
                 ></Profile>
@@ -81,8 +83,8 @@ function Profile({
                 <h2 className="text-stone-700">{data.role}</h2>
             </div>
             <div className="flex flex-col justify-center items-end gap-3">
-                {data.socialMediaEntries.map((socialMediaEntry) => (
-                    <SocialMediaLink data={socialMediaEntry} />
+                {data.socialMediaEntries.map((socialMediaEntry, index) => (
+                    <SocialMediaLink data={socialMediaEntry} key={index} />
                 ))}
             </div>
         </div>
