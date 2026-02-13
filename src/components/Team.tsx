@@ -9,6 +9,7 @@ const ASSETS = {
     github: "/img/github.png",
     telegram: "/img/telegram.png",
     x: "/img/x.png",
+    link: "/img/link.png",
 }
 
 export default function Team() {
@@ -46,6 +47,7 @@ export default function Team() {
                         role: "design",
                         socialMediaEntries: [
                             { link: "https://github.com/f2que", image: ASSETS.github },
+                            { link: "https://x.com/omnopon", image: ASSETS.x },
                         ],
                     }}
                 ></Profile>
@@ -55,6 +57,7 @@ export default function Team() {
                         role: "development",
                         socialMediaEntries: [
                             { link: "https://github.com/isgin01", image: ASSETS.github },
+                            { link: "https://isgin01.github.io/", image: ASSETS.link },
                         ],
                     }}
                 ></Profile>
