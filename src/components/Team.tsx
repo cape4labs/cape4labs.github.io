@@ -8,6 +8,7 @@ const ASSETS = {
     keepOut: "/img/keepOut.png",
     github: "/img/github.png",
     telegram: "/img/telegram.png",
+    x: "/img/x.png",
 }
 
 export default function Team() {
@@ -35,6 +36,7 @@ export default function Team() {
                         role: "tech. writing",
                         socialMediaEntries: [
                             { link: "https://github.com/no-hive", image: ASSETS.github },
+                            { link: "https://x.com/no__hive", image: ASSETS.x },
                         ],
                     }}
                 ></Profile>
@@ -94,7 +96,7 @@ function Profile({
 function SocialMediaLink({ data }: { data: { link: string; image: string } }) {
     return (
         <Link href={data.link}>
-            <Image src={data.image} alt="" width={100} height={100} className="h-7 w-auto" />
+            <Image src={data.image} alt="" width={100} height={100} className="h-7 w-7" />
         </Link>
     )
 }
