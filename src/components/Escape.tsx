@@ -1,3 +1,4 @@
+import Image from "next/image"
 import KeepOut from "./KeepOut"
 
 const ASSETS = {
@@ -32,7 +33,13 @@ export default function Escape() {
                 <br />
 
                 <div className="mt-10">
-                    <img src={ASSETS.escaper} className="scale-125" />
+                    <Image
+                        src={ASSETS.escaper}
+                        alt="Pixelized picture of a stickman stepping into a screen of a pc from 90s."
+                        width={744}
+                        height={706}
+                        className="scale-125"
+                    />
                 </div>
 
                 <KeepOut style="h-7 absolute top-45 md:top-auto md:bottom-15 -rotate-5" />

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import KeepOut from "./KeepOut"
 
 const ASSETS = {
@@ -23,8 +24,11 @@ export default function Experience() {
                 </h2>
                 <KeepOut style="h-7" />
                 <div className="overflow-hidden">
-                    <img
+                    <Image
                         src={ASSETS.eye}
+                        alt="A pixelized picture of a left eye."
+                        width={2400}
+                        height={1052}
                         // TODO: Center content inside the image
                         className="h-full w-full object-contain object-center z-10"
                     />
@@ -33,12 +37,15 @@ export default function Experience() {
             </div>
             <div className="md:flex md:flex-row-reverse border-black bg-white md:border-8 py-5 px-2 max-w-200 md:mt-2">
                 <div className="opacity-50 md:opacity-100 flex justify-center items-center">
-                    <img
+                    <Image
                         src={ASSETS.folders}
+                        alt="Pixelized blue folders positioned vertically on top of one another as an aesthetics element."
+                        width={1037}
+                        height={1528}
                         className="w-full h-full object-contain object-center scale-110 z-0 
 
                         max-w-100 md:max-w-none"
-                        // ^ Limit image size on smaller screens as it can get excessively large on weird screens
+                    // ^ Limit image size on smaller screens as it can get excessively large on weird screens
                     />
                 </div>
 

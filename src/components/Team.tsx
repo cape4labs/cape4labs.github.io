@@ -68,7 +68,7 @@ export default function Team() {
                     src={ASSETS.magician}
                     width={1000}
                     height={500}
-                    alt=""
+                    alt="A pixelized picture of magician."
                     className="w-full h-full object-center object-contain"
                 />
             </div>
@@ -99,7 +99,13 @@ function Profile({
 function SocialMediaLink({ data }: { data: { link: string; image: string } }) {
     return (
         <Link href={data.link}>
-            <Image src={data.image} alt="" width={100} height={100} className="h-7 w-7" />
+            <Image
+                src={data.image}
+                alt="A social media icon. Click to open the member's social media page."
+                width={100}
+                height={100}
+                className="h-7 w-7"
+            />
         </Link>
     )
 }

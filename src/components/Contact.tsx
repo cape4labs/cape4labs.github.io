@@ -1,3 +1,4 @@
+import Image from "next/image"
 import KeepOut from "./KeepOut"
 
 const ASSETS = {
@@ -16,15 +17,24 @@ export default function Contact() {
                 DREAM PROJECT
             </h2>
             <div className="flex justify-center overflow-hidden">
-                <img src={ASSETS.hand} className="max-h-150 object-contain mb-5 z-40" />
+                <Image
+                    src={ASSETS.hand}
+                    alt="A pixelized hand stretching from under water towards surface."
+                    width={3834}
+                    height={1534}
+                    className="max-h-150 object-contain mb-5 z-40"
+                />
             </div>
             <h2 className="font-primary text-xl md:text-4xl text-midnight-light z-30">
                 cape4labs@proton.me
             </h2>
             <KeepOut style="h-9 rotate-[4.2deg]" />
             <div className="md:hidden w-full mt-5 overflow-x-clip">
-                <img
+                <Image
                     src={ASSETS.magician}
+                    alt="A pixelized picture of magician."
+                    width={2400}
+                    height={678}
                     className="w-full h-full object-center object-contain scale-150"
                 />
             </div>
