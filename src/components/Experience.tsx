@@ -45,7 +45,7 @@ export default function Experience() {
                         className="w-full h-full object-contain object-center scale-110 z-0 
 
                         max-w-100 md:max-w-none"
-                    // ^ Limit image size on smaller screens as it can get excessively large on weird screens
+                        // ^ Limit image size on smaller screens as it can get excessively large on weird screens
                     />
                 </div>
 
