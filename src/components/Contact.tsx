@@ -1,5 +1,6 @@
 import Image from "next/image"
 import KeepOut from "./KeepOut"
+import Link from "next/link"
 
 const ASSETS = {
     magician: "/img/magician.png",
@@ -7,6 +8,8 @@ const ASSETS = {
 }
 
 export default function Contact() {
+    var email: string = "cape4labs@proton.me"
+
     return (
         <div className="flex flex-col text-center pt-10 md:pt-5 bg-white border-black md:border-8 md:mt-2 max-w-200 pb-5">
             <h2 className="font-primary text-5xl text-midnight-soft z-30 md:translate-y-5">
@@ -26,7 +29,7 @@ export default function Contact() {
                 />
             </div>
             <h2 className="font-primary text-xl md:text-4xl text-midnight-light z-30">
-                cape4labs@proton.me
+                <Link href={`mailto:${email}`}>{email}</Link>
             </h2>
             <KeepOut style="h-9 rotate-[4.2deg]" />
             <div className="md:hidden w-full mt-5 overflow-x-clip">
