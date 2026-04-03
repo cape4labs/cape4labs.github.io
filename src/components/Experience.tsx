@@ -8,16 +8,17 @@ const ASSETS = {
 on-chain data crowd-sourcing (AudataDAO), and decentralized
 finance (Sunflower).`,
     text2: `Beyond web3, we also worked with high-quality 
-traditional web applications. personal websites, marketplaces, analytics 
-dashboards, and chatbot solutions.`,
+traditional web applications, personal websites, marketplaces, analytics 
+dashboards, `,
+    text3: `and chatbot solutions.`,
     heading: "Our experience",
 }
 
 export default function Experience() {
     return (
         <>
-            <div className="bg-white flex flex-col items-center py-5 px-2 border-black md:border-8 max-w-200 relative md:mt-2">
-                <h2 className="text-3xl md:text-4xl text-midnight-light z-30 mb-5">
+            <div className="bg-white flex flex-col items-center pt-5 border-black md:border-8 max-w-200 relative md:mt-2">
+                <h2 className="text-3xl md:text-4xl text-midnight-light z-30 mb-5 px-2">
                     Our primary expertise lies in
                     <span className="text-shadow-accent text-shadow-lg"> JavaScript</span>{" "}
                     technologies
@@ -53,7 +54,17 @@ export default function Experience() {
                 <div>
                     <h2 className="mb-5 text-midnight-light z-30">Our experience</h2>
                     <p className="text-xl lg:text-2xl font-secondary mb-4">{ASSETS.text1}</p>
-                    <p className="text-xl lg:text-2xl font-secondary ">{ASSETS.text2}</p>
+                    {/* TODO: reconsider this block if text changes */}
+                    <div className="hidden lg:block">
+                        <p className="text-xl lg:text-2xl font-secondary">{ASSETS.text2}</p>
+                        <p className="text-xl lg:text-2xl font-secondary">{ASSETS.text3}</p>
+                    </div>
+                    <div className="lg:hidden">
+                        <p className="text-xl lg:text-2xl font-secondary">
+                            {ASSETS.text2}
+                            {ASSETS.text3}
+                        </p>
+                    </div>
                 </div>
             </div>
         </>

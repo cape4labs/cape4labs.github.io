@@ -9,7 +9,7 @@ const ASSETS = {
     github: "/img/github.png",
     telegram: "/img/telegram.png",
     x: "/img/x.png",
-    link: "/img/link.png",
+    planet: "/img/planet.png",
 }
 
 export default function Team() {
@@ -34,7 +34,7 @@ export default function Team() {
                 <Profile
                     data={{
                         name: "no-hive",
-                        role: "tech. writing",
+                        role: "product",
                         socialMediaEntries: [
                             { link: "https://github.com/no-hive", image: ASSETS.github },
                             { link: "https://x.com/no__hive", image: ASSETS.x },
@@ -46,7 +46,7 @@ export default function Team() {
                         name: "omnopon",
                         role: "design",
                         socialMediaEntries: [
-                            { link: "https://github.com/f2que", image: ASSETS.github },
+                            { link: "https://t.me/omnopon", image: ASSETS.telegram },
                             { link: "https://x.com/omnopon", image: ASSETS.x },
                         ],
                     }}
@@ -57,7 +57,7 @@ export default function Team() {
                         role: "development",
                         socialMediaEntries: [
                             { link: "https://github.com/isgin01", image: ASSETS.github },
-                            { link: "https://isgin01.github.io/", image: ASSETS.link },
+                            { link: "https://isgin01.github.io/", image: ASSETS.planet },
                         ],
                     }}
                 ></Profile>
